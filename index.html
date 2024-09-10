@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Dracomania Digital</title>
+    <meta name="description" content="Simulação Digital do jogo de cartas colecionáveis Dracomania (Elma Chips, 2008)">
+    <meta name="keywords" content="dracomania elma chips 2008 super trunfo cards jogo">
+    <meta property="og:image" content="imagens/magia.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="imagens/magia.png">
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
+
+    <!-- Scripts -->
+    <script src="javascript/maingame.js"></script>
+    <script src="javascript/cartas.js"></script>
+</head>
+
+<body onload="initialize_collection(); start_battle()">
+    
+        <div class="side-buttons" style="visibility: hidden;">
+            <button id="add_card" onclick="add_card()">Add Card</button>
+            <button id="remove_card" onclick="remove_card(1)">Remove Card (id)</button>
+            <button id="start_battle" onclick="start_battle()">Start Battle</button>
+        </div>
+
+        <div class="game-interface">
+            <div id="opções-de-batalha">
+                <button class="opção-de-batalha" onclick="get_battle_results('magia')">Magia</button>
+                <button class="opção-de-batalha" onclick="get_battle_results('força')">Força</button>
+                <button class="opção-de-batalha" onclick="get_battle_results('fogo')">Fogo</button>
+            </div>
+
+            <button id="next-battle-btn" class="next-battle-btn" onclick="prepare_next_battle()">Próxima Batalha</button>
+
+            <div id="mensagem-de-batalha" class="mensagem-de-batalha">
+                MAGIA: 30 { 28. Você ganhou [carta].
+            </div>
+
+            <div id="coleção-contador" class="coleção-contador">Coleção: 10/30</div>
+
+        </div>
+        
+        <div id="area-de-batalha" class="area-de-batalha">
+
+        </div>
+
+        <div id="collection" class="collection">
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
